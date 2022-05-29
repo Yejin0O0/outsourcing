@@ -13,13 +13,13 @@
             <h1 class="login-header">로그인</h1>
         </header>
         <section class="login-section">
-            <form action="daily.jsp" method="post" class="flex-column login-form">
-                <input name="id_value" class="login-input" type="text" placeholder="아이디">
-                <input name="pw_value" class="login-input" type="password" placeholder="비밀번호">
+            <form id="login_form" action="daily.jsp" method="post" class="flex-column login-form">
+                <input id="id_value" name="id_value" class="login-input" type="text" placeholder="아이디">
+                <input id="pw_value" name="pw_value" class="login-input" type="password" placeholder="비밀번호">
                 <div class="login-signup-btn">
                     <a class="login-signup-font" href="signup.jsp">회원가입하기</a>
                 </div>
-                <input class="login-submit-btn" type="submit" value="로그인하기">
+                <input class="login-submit-btn" type="button" value="로그인하기" onclick="login()">
 
 
             </form>
@@ -27,3 +27,18 @@
     </article>
 </body>
 
+<script>
+    function login() {
+        var form = document.getElementById('login_form')
+        var id = document.getElementById('id_value').value
+        var pw = document.getElementById('pw_value').value
+
+        if(!id || !pw) {
+            alert("아이디와 비밀번호를 모두 입력해주세요.")
+        }
+        else{
+            
+            form.submit()
+        }
+    }
+</script>

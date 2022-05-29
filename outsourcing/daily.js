@@ -1,9 +1,24 @@
 var daily_add = document.getElementById('daily_add')
-var schedule_date = document.getElementById('schedule_date')
-var schedule_time = document.getElementById('schedule_time')
-var schedule_cont = document.getElementById('schedule_cont')
 var schedule_change = document.getElementById('schedule_change')
 var daily_aside_list = document.getElementById('daily_aside_list')
+
+
+function deleteSchedule(num) {
+    confirm("정말로 삭제하시겠습니까?") 
+}
+
+
+function showList() {
+    if (daily_aside_list.style.display === 'none' ) {
+        daily_aside_list.style.display = 'block';
+
+    }
+    else {
+        daily_aside_list.style.display = 'none';
+
+    }
+
+}
 
 function addSchedule() {
     if (daily_add.style.display === 'none' ) {
@@ -17,38 +32,40 @@ function addSchedule() {
 
 }
 
-function changeSchedule() {
-    if (schedule_change.innerHTML === '수정') {
-        schedule_date.type = 'date';
-        schedule_time.disabled = false;
-        schedule_cont.disabled = false;
-        schedule_change.innerHTML = '확인'
+function changeSchedule(num) {
+    var schedule_change = document.getElementById('schedule_change_'+num)
+    var schedule_date = document.getElementById('schedule_date_'+num)   
+    var schedule_time = document.getElementById('schedule_time_'+num)
+    var schedule_cont = document.getElementById('schedule_cont_'+num)
+    var schedule_date_p = document.getElementById('schedule_date_p_'+num)
+    var schedule_time_p = document.getElementById('schedule_time_p_'+num)
+    var schedule_cont_p = document.getElementById('schedule_cont_p_'+num)
+    var daily_article_form = document.getElementById('daily_article_form_'+ num)
+
+    
+    if (schedule_change.value == '수정') {
+        schedule_date.style.display = 'block'
+        schedule_time.style.display = 'block'
+        schedule_cont.style.display = 'block'
+        schedule_date.focus()
+        schedule_date_p.style.display = 'none'
+        schedule_time_p.style.display = 'none'
+        schedule_cont_p.style.display = 'none'
+        schedule_change.value = '확인'
     }
     else {
-        schedule_date.type = 'hidden';
-        schedule_time.disabled = true;
-        schedule_cont.disabled = true;
-        schedule_change.innerHTML = '수정'
+        daily_article_form.action = 'dailyUpdateModule.jsp'
+        daily_article_form.submit()
     }
-
-
-    console.log("3")
 
 }
 
-function deleteSchedule() {
-    confirm("정말로 삭제하시겠습니까?")
-}
+function deleteSchedule(num) {
+
+    var daily_article_form = document.getElementById('daily_article_form_'+ num)
 
 
-function showList() {
-    if (daily_aside_list.style.display === 'none' ) {
-        daily_aside_list.style.display = 'block';
-
-    }
-    else {
-        daily_aside_list.style.display = 'none';
-
-    }
+    daily_article_form.action = 'dailyDeleteModule.jsp'
+    daily_article_form.submit()
 
 }

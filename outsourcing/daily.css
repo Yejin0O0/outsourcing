@@ -7,13 +7,16 @@
     font-family: 'nanumBold';
     src: url('../NanumSquare/NanumSquareB.otf') format('opentype');
 }
+html{
+    height: 100%;
+}
 
 .daily-body {
     font-family: nanum;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 
@@ -22,6 +25,15 @@
     margin-left: 5%;
     z-index: 100;
     cursor: pointer;
+    min-width: 100px;
+}
+
+.daily-logo-people {
+    width: 10%;
+    margin-left: 5%;
+    z-index: 100;
+    cursor: pointer;
+    min-width: 30px;
 }
 
 .daily-header {
@@ -37,7 +49,7 @@
     justify-content: center;
     width: 20%;
     margin-right: 5%;
-
+    min-width: 155px;
 }
 
 .flex-nav {
@@ -46,6 +58,7 @@
     align-items: center;
     width: 100%;
     margin-bottom: 70px;
+    cursor: pointer;
 }
 
 .flex-nav-div {
@@ -75,6 +88,8 @@
     border: #F66B0E solid 2px;
     height: 100%;
     display: none;
+    min-width: 400px;
+    margin-bottom: 50px;
 }
 
 
@@ -126,8 +141,8 @@
 }
 
 .daily-article-form {
-    width: 70%;
-    /*display: flex;*/
+    width: 65%;
+    min-width: 450px;
 }
 
 .daily-article-div {
@@ -140,7 +155,6 @@
 .daily-article-schedule-div {
     display: flex;
     width: 90%;
-    justify-content: space-around;
 
 }
 .daily-article-past {
@@ -154,7 +168,7 @@
     font-family: nanumBold;
     border: none;
     background-color: white;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .daily-article-time {
@@ -162,15 +176,15 @@
     font-family: nanumBold;
     border: none;
     background-color: white;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .daily-article-cont {
-    width: 80%;
+    width: 70%;
     font-family: nanumBold;
     border: none;
     background-color: white;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .daily-article-ru {
@@ -190,14 +204,42 @@
     right: 0;
     height: 100%;
     display: none;
-}
-
-.daily-aside-div {
-    margin-top: 100px;
+    padding-top: 100px;
 }
 
 .daily-aside-role {
     font-family: nanumBold;
-    font-size: 20px;
+    margin-right: 20px;
 }
 
+.daily-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 575px) {
+
+    .daily-article-date {
+        font-size: 12px;
+    }
+
+    .daily-article-time {
+        font-size: 12px;
+    }
+
+    .daily-article-cont {
+        font-size: 12px;
+    }
+
+    .daily-article-ru {
+        font-size: 10px;
+    }
+
+
+}

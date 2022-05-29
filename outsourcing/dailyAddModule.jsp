@@ -38,16 +38,23 @@
    
     query.executeUpdate();
 
-        request.getSession().setAttribute("id", id);
-        request.getSession().setAttribute("pw", pw);
-        request.getRequestDispatcher("daily.jsp").forward(request, response);
-        
-
-    } else{ // 실패 안됨....
-        
-        
-    }
-   
-    
+    //response.sendRedirect("daily.jsp");
 
 %>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+            <form action="daily.jsp" method="post">
+                <input name="id_value" type="text" value=<%=id%>>
+                <input name="pw_value" type="text" value=<%=pw%>>
+                <input id="submit" type="submit">
+            </form>
+
+</body>
+
+<script type="text/javascript" src="public.js"></script>

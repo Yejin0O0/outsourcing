@@ -37,14 +37,7 @@
    
     int result = query.executeUpdate();
 
-    if(result == 1){ 
-        out.print("<script>alert('환영합니다!');  document.location.href = 'login.jsp'</script>");
-        
-
-    } else{ // 실패 안됨....
-        out.print("<script>alert('회원가입을 다시 시도해주세요'); document.location.href = 'signup.jsp'</script>");
-        
-    }
+    response.sendRedirect("login.jsp");
    
     
 

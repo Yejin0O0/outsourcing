@@ -1,16 +1,18 @@
 
 .login-body {
     font-family: nanum;
-    height: 100vh;
+    height: 100%;
 }
 .login {
     width: 28%;
-    height: 70vh;
+    min-width: 400px;
+    height: 70%;
     justify-content: space-evenly;
 }
 
 .login-logo {
     width: 60%;
+    min-width: 235px;
 }
 
 .login-header {
